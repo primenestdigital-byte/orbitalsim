@@ -1,0 +1,118 @@
+:root {
+  --bg: #05060a;
+  --panel: rgba(13, 16, 26, 0.86);
+  --border: rgba(120, 140, 200, 0.22);
+  --text: #dfe6f5;
+  --dim: #8a94b0;
+  --accent: #6ea8ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  user-select: none;
+}
+
+#space {
+  position: fixed;
+  inset: 0;
+  display: block;
+  cursor: crosshair;
+}
+
+#hud {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  pointer-events: none;
+}
+
+#hud h1 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+#hud .tagline {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+#panel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 300px;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row label {
+  font-size: 12px;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+.row.presets { gap: 6px; }
+
+button {
+  flex: 1;
+  padding: 7px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--text);
+  background: rgba(110, 168, 255, 0.10);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+button:hover { background: rgba(110, 168, 255, 0.25); border-color: var(--accent); }
+button:active { transform: translateY(1px); }
+
+input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+}
+
+input[type="checkbox"] { accent-color: var(--accent); }
+
+.spacer { flex: 1; }
+
+.mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+#massVal { min-width: 52px; text-align: right; }
+
+#stats {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}

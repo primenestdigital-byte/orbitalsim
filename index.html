@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrbitalSim — N-body Gravity Playground</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="space"></canvas>
+
+<header id="hud">
+  <h1>OrbitalSim</h1>
+  <p class="tagline">N-body gravity playground — drag on empty space to fling a new body</p>
+</header>
+
+<div id="panel">
+  <div class="row presets">
+    <button id="preset-binary"  title="Two stars locked in mutual orbit">Binary Star</button>
+    <button id="preset-solar"   title="A star with planets on circular orbits">Solar System</button>
+    <button id="preset-chaos"   title="1200-particle rotating disk of chaos">Random Chaos</button>
+  </div>
+
+  <div class="row">
+    <label for="mass">New body mass</label>
+    <input type="range" id="mass" min="0" max="100" value="45">
+    <span id="massVal" class="mono">—</span>
+  </div>
+
+  <div class="row">
+    <label for="trails"><input type="checkbox" id="trails" checked> Trails</label>
+    <span class="spacer"></span>
+    <button id="pause" title="Space">Pause</button>
+    <button id="step"  title="Period / →">Step</button>
+    <button id="reset" title="R">Reset</button>
+  </div>
+
+  <div id="stats" class="mono">
+    <span id="stat-fps">fps —</span>
+    <span id="stat-bodies">bodies —</span>
+    <span id="stat-merges">merges —</span>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
